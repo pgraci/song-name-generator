@@ -1,0 +1,60 @@
+<?php
+
+
+ // inspired by http://www.modplug.com/includes/titlegen.js
+
+ $the_word = ucwords($_REQUEST['word']);
+
+ $the_mode = $_REQUEST['mode'];
+
+ if ($the_mode == '') {
+  $the_mode = 1;
+ }
+
+ $namelist_adverbs  = "Stupendously Quickly Swiftly Slowly Incredulously Definitively Arguably Undoubtedly Absolutely Brilliantly Swimmingly Fruitfully Boldly Delightfully Patiently Feverishly Daftly Pitifully Haphazardly Frightfully Tentatively Smugly Joyfully Triumphantly Happily Reflectively Monotonously Miserably Arrogantly Innocently Sloppily Romantically Sufficiently Digitally Moderately Dangerously Diligently Substantially Overwhelmingly Mechanically Quietly Emotionally Radically Liberally Conservatively Aggressively Hopelessly Mysteriously Inquisitively Vivaciously Boastfully Deliberately Mortally Shakily Merrily Fatally Humorously Fatuously Vacuously Unconsciously";
+
+
+
+ $namelist_verbs = "Soaring Flying Sailing Kicking Spitting Elongating Spraying Playing Bashing Sneezing Smiling Barfing Belching Vomiting Exploding Drooling Tickling Whispering Flirting Fantasizing Composing Singing Maneuvering Dismembering Angering Bewildering Chattering Cowering Discovering Floundering Jabbering Meandering Muttering Plundering Quivering Severing Slithering Sneering Snickering Surrendering Clinging Bleeding Broadcasting Creeping Dreaming Fighting Kneeling Overcoming Pleading Shining Typing Crawling Preaching Lying Slaughtering Repelling Chomping Terrorizing Composing Decomposing Swimming Paddling Sniffing Obstructing Obfuscating Smoldering Tweaking Proselytizing Operating Machinating Debouching Ossifying Tweeting Facebooking";
+
+ $namelist_adjectives = "Adventurous Superstitious Dependant Unfriendly Aggressive Clueless Innocent Active Old-Fashioned Anxious Adaptable Decent Irritated Arrogant Creative Critical Unstable Travelling Slow Boring Loud Lively Shallow Passionate Serious Enthusiastic Quiet Soft Pleasant Pensive Miserable Stable Timid Persevering Zany Mad Humble Self-Effacing Demented Crazy Possessive Upbeat Daring Careless Sloppy Envious Nervous Silly Ignorant Stupid Spiteful Evil Angry Chaotic Ambitious Curious Optimistic Partial Passive Conceited Lonely Lonesome Vain Detestable Elegant Sensitive Energetic Dedicated Revolutionary Rebellious Romantic Placid Fantastic Fascinating Cowardly Firm Solid Industrious Dirty Tricky Happy Phantom Fast Reserved Dangerous Sentimental Brilliant Crumpled Crumbling Infectious Ordinary Submersible Tantric Elated Venturesome Gorgeous Diligent Agile Affectionate Annoyed Analytical Quiet Relaxed Reliable Robust Spunky Methodical Mature Confident Cool Cooperative Emotional Slimy Colorful Moderate Modest Motivated Natural Opportunistic Painstaking Poised Progressive Reflective Sensible Sociable Spontaneous Tenacious Thorough Unassuming Uninhibited Streamlined Certified Free-Flowing Maximum Flirtatious Moist Rotten Thoughtless Heartless Trippy Motionless Unwavering Precise Vibrating Gyrating Pulsating Throbbing Depressing Resourceful Unbelievable Alleged Incomprehensible Wrenching Wretched Delicate Disturbing Substantial Illogical Irrational Ghetto Harmful Raving Suicidal Sufficient Creamy Lost Slithering Belching Overwhelming Intelligent Marching Quirky Subconscious Sexy Colorless Rancid Festering Swirling Crying Metallic Digital Smoking Temporary Phat Invisible Digitized Shrink-Wrapped Jet-Powered Automatic Dripping Shattered Drunken Giddy Deadly Defiant Bold-Faced Perverted Circular Fluid Incredible My Your Typical Mechanical Fake Plastic Surreal Fragile Groovy Bouncy Extraordinary Contagious Diesel Gilded Platinum Rendered Three-Dimensional Stupendous Witty Obnoxious Gnarly Screaming Wicked Enraged Bodacious Radical Heroic Problematic Excruciating Terrified Pistol-Whipped Unreasonable Erupting Disruptive Scrumptious Perilous Daunting Withered Tattered Frivilous Left-Wing Mixed-Up Dreary Crispy Froody Purple Flat Fertile Part-Time Crusty Old Black And White His Her Deep Kentucky-Fried Transparent Electric Unexpected Frozen Nostalgic On-Line Hollow Impulsive Embarrassing Ascending Motorized Analog Artificial Echoing Resilient Chocolate-Covered Das Rhyming Prickly Bloated Accomplished Petrified Twisted Pious The Ye Olde Perpendicular Corporate Exploding Silicone Putrid Squalid Fetid Amorphous Refined Insurmountable Monochrome Technicolor Ghastly Freeze-Dried Binary Tangible Constipated Cyber- Candy-Coated Organized Playful Foolish Orchestral Classical Upside-Down Self-Destructive Psycho Dope Shrouded Simulated Uninvited Cloned Blurry Splitting Harmonious Operatic Inconceivable Quixotic Fallacious Sad Sacks Of Tons Of Rings Of A Song About Dastardly Spiffy Studious Obscure Obtuse Timorous Tremulous Fidgety Toxic Misguided Superficial Implied Abominable Unspeakable Tattooed Inside-Out Prodigious Bouncing Subatomic Secluded Sequestered Cynical Abandoned Lonesome Desolate Solitary Unoriginal Disgusting Super-Sized Monotonous Ambient Nebulized Vaporized Triumphant Exultant Magical Misshapen Bionic Jiggling Dangling Incongruous Polka-Dotted Angelic Vainglorious Predictable Caustic Flaccid Smug Saucy Conscientious Genial Pellucid Chimerical Extemporaneous Risible Syncretic Gauche Recalcitrant Lascivious Obstreperous Contemporaneous Indomitable Pervicacious Commodious Vertiginous Improvident Supercilious Swaggering Snooty Cheeky Garrulous Lugubrious Fierce Red Blue Purple Misunderestimated";
+
+ $namelist_nouns = "Love Hearts Sky Nights Relationships Whispers Time Dreams Nescience Thongs Ideas Notions Noogies Thoughts Melody Melodies Harmony Titmice Visions Conversations Rendesvous Motions Movements Tenderness Life Humans Persecution Death Challenges Circumstances Elements Angst Piranha Afternoon Graves Gerbils Assault Abnormalities Acrimony Adversity Afflictions Anomaly Anxiety Apparitions Assaults Blood Burial Crypts Damage Demons Dilemma Disaster Furor Hallucinations Hardship Horrors Hostility Intensity Killers Legacy Legends Lust Madness Misery Misfortune Mutants Nightmares Oddities Outbursts Pain Parasites Phenomenon Phobias Predicaments Quandaries Rage Rampage Salvation Shadows Silence Sorrow Specters  Storms Suffering Tantrums Thunder Tribulations Umbrage Violence Woe Wraiths Sexuality Conscience Lightning Fodder Players Cadavers Nothingness Void Vacancy Heaven Euphoria Cacophony Prophets Azimuth Continuum Crisis Danger Plethora Smokescreen Tedium Slumber Romantic Meat Biology Knowledge Experience Atmosphere Culture Sounds Symphony Flesh Majesty Criminal Stalkers Landscape Galaxies Spaces Bodies Feelings Chickens Bones Technique Toasters Icons God Power Pictures Eyes Situations Scenario Vibe Groove Martyr Fixation Delusion Ambition Collision Precision Fear Combustion Veins Brain Body Gyrations Vacuum Darkness Advocates Punishment Feminists Rhythm Extremists Blossom Flower Readout Display Operations Vandals Scandal Communication Specifications Party Lunatic Madman Solution Inspectors Action Weasels Platypus People Cows Flatulence Beats Serpent Protest Universe Instruments Captives Miracles Underground Pustules Wounds Scars Spiders Generations Sheep Insults Patterns Women Men Beliefs Production Fish Opus Tunage Blisters Devastation Tracker Depression Happiness Gangsta Assessments Obstacles Fantasies Weapons Forces Sock Puppets Pillows Molecules Atoms Toenails Phlegm Hurricanes Masochism Critters Emotions Androids Exploration Song Frogs Qualities Rainbows Soundscapes Stuff Dinosaurs Junkies Yuppies Peanuts Squirrels Outlaws Brothers Sisters Expectations DJ Speakers Penguins Skeletons Composition Parts Bits Millenia Liquid Castles Knights Tidbits Plasma Vitamins Programs Soundwaves Biscuits Mother Father Bunnies Musicians Ghosts Epitaphs Beatz Whatchamacallits Maniacs Craftsman Webmaster Computers Toadstools Remains Hemoglobin Hemorrhoids Contaminates Buttocks Concert Strain Tune Aria Sonata Rondo Cavatina Overture Variations Cadenza Fugue Serenade Notturno Operetta Oratorio Potpourri Capriccio Canticle Ballad Ditty Terzetto Drone Rendezvous Forms Carcass Notes Relics Carrion Utopianism Excogitation Messages Cupcakes Cucumbers Chia Pets Eskimos Strudel Goulash Prunes Grunties Meditation Contemplation Reverie Vacuity Ineptitude Extravagance Desquamation Diffidence Suspicion Trepidation Perturbation Despondency Consternation Contagions Associations Effluvium Software Hardware Floppy Disks Cooties Things Pumpkins Egyptians Lobsters Farewell Kibbles Isolation Exile Seclusion Banishment Pariah Troglodyte Imitations Travesties Nausea Jubilation Baboons Earaches Raisins Wizards Dragons Princes Princesses Warlocks Adversaries Dingos Labyrinth Crustaceans Sociopaths Web Sites Excrement Biomass Nature Asteroids Angels Cigars Reporters Politicians Generals Statues Comrades Revolutionaries Mullahs Pawns Democrats Protesters Reactionaries Hippies Bacterium Cerebellum Animations Machinations Tweeters Woofers Subwoofers Endeavors Muffins Conspectus Gravitas Concinnity Verisimilitude Eremites Depredation Imbroglio Invalids Schadenfreude In-Laws Uncles Depression Peeps Mummies Ashtrays Artifacts Googlers Razors Teleprompters AIG Executives Cowboys Islands Peninsulas Gargoyles Tweets Facebookers Enigma";
+
+ $namelist_endings = "'On A Plate' 'In The Streets' 'In The 21st Century' 'In The Sky' 'In The Dark' 'Forever' 'From Hell' 'In The Future' 'Of The Past' 'Under The Bed' 'Under A Tree' 'From Outer Space' 'From Mars' '(Radio Edit)' 'On The Battlefield' 'Of Love' 'In The Shade' 'Underwater' 'On The Weekends' 'On The Horizon' 'From Above' 'From Below' 'On A Roll' 'And A Bag Of Chips' 'Without Remorse' 'Beyond The Stars' 'In My Dreams' 'In Our Midst' 'Without A Care' 'From My Heart' 'Blown To Pieces' 'From Another World' 'On The Side' '(Part One)' 'Of Englightenment' 'Running Around' 'Mucking About' 'In A Box' 'For No Reason' 'In Black' 'In My Head' 'From Within' 'On The Dancefloor' 'Under Glass' 'On My Screen' 'Fading Fast' 'Hidden Away' 'In A Can' 'Standing There' 'Out Of Thin Air' 'In The Closet' 'In A Bottle' 'In My Mind' 'In Da House' 'In My Pocket' 'Every Single Day' 'Hanging Out' 'On Drugs' 'Falling Apart' 'From The Sewer' 'Up On The Roof' 'Behind My Back' 'Through And Through' 'Behind Bars' 'Out In The Open' 'In Another Land' 'Smashed To Bits' 'All Around Me' 'In A Petri Dish' 'In Disguise' 'At The Door' 'On Acid' 'After Midnight' 'In Your Backyard' 'Lost Forever' 'Gone For Good' 'Here To Stay' 'In Your Ears' 'In The Underworld' 'Of Yesteryear' 'Above The Grass' 'Under The Sky' 'On The Beach' 'Popping Up' 'On Wheels' '(Remix)' 'In The Mirror' 'On TV' 'On The Radio' 'In The Forest' 'From Nowhere' 'Of Doom' 'Under Fire' 'Under The Table' 'In The Shed' 'On The Internet' 'In My Soup' 'In My Pants' 'Alive and Well' 'In The Middle East' 'At The Podium' 'Like Never Before' 'Opus 1' ' Watching Us' 'Far From Home' 'Scattered Around' 'In Command' 'Like Never Before' 'On Twitter'";
+
+ $namelistarray_adverbs = explode(" ", $namelist_adverbs);
+ $namelistarray_verbs = explode(" ", $namelist_verbs); 
+ $namelistarray_adjectives = explode(" ", $namelist_adjectives);
+ $namelistarray_nouns = explode(" ", $namelist_nouns);
+ $namelistarray_endings = explode("' '", $namelist_endings);
+
+ shuffle($namelistarray_adverbs);
+ shuffle($namelistarray_verbs);
+ shuffle($namelistarray_adjectives);
+ shuffle($namelistarray_nouns);
+ shuffle($namelistarray_endings);
+
+
+ if ($the_mode == 1) {
+    echo $namelistarray_adverbs[0] . " " . $namelistarray_verbs[0] . " " . $namelistarray_adjectives[0]. " " . $the_word . " " . $namelistarray_nouns[0] . " " . str_replace("'","",$namelistarray_endings[0]);
+
+ } elseif ($the_mode == 2) {
+    if ($the_word == '') {
+        echo $namelistarray_verbs[0] . " " . $namelistarray_adjectives[0]. " " . $namelistarray_nouns[0];
+    } else {
+	echo $namelistarray_verbs[0] .  " " . $the_word . " " . $namelistarray_nouns[0];
+    }
+
+
+ } else {
+   
+    if ($the_word == '') {
+	echo $namelistarray_adjectives[0]. " " . $namelistarray_nouns[0];
+    } else {
+	echo $namelistarray_adjectives[0]. " " . $the_word;
+    }
+ }
+
+
+?>
