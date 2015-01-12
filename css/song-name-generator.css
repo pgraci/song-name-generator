@@ -24,7 +24,7 @@ a{
   border-bottom: 2px solid #C5C5C8;
   border-radius: 5px;
   text-align: center;
-  color: #539ACE;
+  color: #080808;
   text-shadow: 0 1px 0 #FFF;
   max-width: 300px;
   margin: 20px auto;
@@ -35,6 +35,7 @@ h1{
   font-size: 1.6em;
   margin-top: 30px;
   margin-bottom: 10px;
+  color: #539ACE;
 }
 p{
   font-family:'Helvetica Neue';
