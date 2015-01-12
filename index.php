@@ -3,7 +3,7 @@
 <head>
   <title>Song Name Generator - version 1.0</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <meta name="description" content="Generate Song Names" />
   <meta name="keywords" content="song, names" />
 
