@@ -6,32 +6,35 @@
   <meta name="description" content="Generate Song Names" />
   <meta name="keywords" content="song, names" />
 
+  <link type="text/css" href="css/song-name-generator.css" rel="stylesheet">
+
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-
-
   <script src="http://malsup.github.com/jquery.form.js"></script>
 	<script type="text/javascript" src="js/song-name-generator.js"></script>
 
 </head>
 <body>
-
+  
+  <div class="song-name-container">
+  <h1>Song Name Generator</h1>
+  <p>Need a cool name for your song?</p>
   <form id="song-name-form" name="song-name-form" method="post" action="song-name-generator.php">
-    <fieldset>
-      <label for="word">Enter A Keyword (Optional)</label>
-      <input type="text" name="word" id="word">
-    </fieldset>
-    <fieldset>
-      <input type="radio" name="mode" value="3" checked> Small<br />
-      <input type="radio" name="mode" value="2"> Medium<br />
-      <input type="radio" name="mode" value="1"> Large<br />
-    </fieldset>
-    <fieldset>
-      <input type="submit" value="Create Song Name">
-    </fieldset>
+    <div class="input">
+      <div class="blockinput">
+        <input type="text" name="word" id="word" placeholder="Enter Ideas or Keyword (Optional)">
+      </div>
+      <div class="blockinput">
+        <input type="radio" name="mode" value="3" checked> Small<br />
+        <input type="radio" name="mode" value="2"> Medium<br />
+        <input type="radio" name="mode" value="1"> Large<br />
+      </div>
+    </div>
+    <button>Create Song Name</button>
   </form>
+  </div>
 
   <div id="new-song-name"></div>
+
 
 </body>
 </html>
