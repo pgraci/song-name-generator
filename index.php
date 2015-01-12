@@ -21,7 +21,7 @@
   <form id="song-name-form" name="song-name-form" method="post" action="song-name-generator.php">
     <div class="input">
       <div class="blockinput">
-        <input type="text" name="word" id="word" placeholder="Enter Ideas or Keyword (Optional)">
+        <input type="text" name="word" id="word" placeholder="Enter Keyword (Optional)">
       </div>
       <div class="blockinput">
         <input type="radio" name="mode" value="3" checked> Small<br />
