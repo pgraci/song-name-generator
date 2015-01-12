@@ -16,10 +16,10 @@
 </head>
 <body>
 
-  <form id="song-name-form" method="post" action="song-name-generator.php">
+  <form id="song-name-form" name="song-name-form" method="post" action="song-name-generator.php">
     <fieldset>
       <label for="word">Enter A Keyword (Optional)</label>
-      <input type="text" name="word">
+      <input type="text" name="word" id="word">
     </fieldset>
     <fieldset>
       <input type="radio" name="mode" value="3" checked> Small<br />
