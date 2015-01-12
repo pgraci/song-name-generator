@@ -32,13 +32,19 @@
  shuffle($namelistarray_nouns);
  shuffle($namelistarray_endings);
 
+ $the_adverb = $namelistarray_adverbs[0];
+ $the_verb = $namelistarray_verbs[0];
+ $the_adjective = $namelistarray_adjectives[0];
+ $the_noun = $namelistarray_nouns[0];
+ $the_ending = str_replace("'","",$namelistarray_endings[0]);
+
 
 // build song name
 
  if ($the_mode == 1) {
     // long format = adverb + verb + adjective + seed + nouns + ending
 
-    $the_song_name = $namelistarray_adverbs[0] . " " . $namelistarray_verbs[0] . " " . $the_word . " " . $namelistarray_nouns[0] . " " . str_replace("'","",$namelistarray_endings[0]);
+    $the_song_name = $the_adverb . " " . $the_verb . " " . $the_word . " " . $the_noun . " " . $the_ending;
 
  } elseif ($the_mode == 2) {
     // medium format = 3 words total
@@ -47,9 +53,9 @@
     // verb + seed + nouns
 
     if ($the_word == '') {
-        $the_song_name = $namelistarray_verbs[0] . " " . $namelistarray_adjectives[0]. " " . $namelistarray_nouns[0];
+        $the_song_name = $the_verb . " " . $the_adjective . " " . $the_noun;
     } else {
-	      $the_song_name = $namelistarray_verbs[0] .  " " . $the_word . " " . $namelistarray_nouns[0];
+	      $the_song_name = $the_verb .  " " . $the_word . " " . $the_noun;
     }
 
 
@@ -60,9 +66,9 @@
     // adjective + seed
 
     if ($the_word == '') {
-	     $the_song_name = $namelistarray_adjectives[0]. " " . $namelistarray_nouns[0];
+	     $the_song_name = $the_adjective . " " . $the_noun;
     } else {
-	     $the_song_name = $namelistarray_adjectives[0]. " " . $the_word;
+	     $the_song_name = $the_adjective . " " . $the_word;
     }
  }
 
