@@ -25,9 +25,11 @@
         <input type="text" name="word" id="word" placeholder="Enter Keyword (Optional)">
       </div>
       <div class="blockinput">
-        <input type="radio" name="mode" value="3" checked> Small<br />
-        <input type="radio" name="mode" value="2"> Medium<br />
-        <input type="radio" name="mode" value="1"> Large<br />
+        <select name="mode">
+          <option name="mode" value="3"> Small</option>
+          <option name="mode" value="2"> Medium</option>
+          <option name="mode" value="1"> Large</option>
+        </select>
       </div>
     </div>
     <button>Create Song Name</button>
