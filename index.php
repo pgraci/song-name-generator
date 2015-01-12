@@ -18,7 +18,7 @@
 
   <div class="song-name-container">
   <h1>Song Name Generator</h1>
-  <p>Need a cool name for your song?</p>
+  <p id="new-song-name">Need a cool name for your song?</p>
   <form id="song-name-form" name="song-name-form" method="post" action="song-name-generator.php">
     <div class="input">
       <div class="blockinput">
@@ -30,7 +30,6 @@
         <input type="radio" name="mode" value="1"> Large<br />
       </div>
     </div>
-    <div id="new-song-name"></div>
     <button>Create Song Name</button>
   </form>
   </div>
