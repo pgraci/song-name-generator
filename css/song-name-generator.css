@@ -106,7 +106,7 @@ button:active{
   box-shadow: inset 0 0 5px #000;
   background: linear-gradient(to bottom, rgba(57,175,154,1) 0%,rgba(107,198,186,1) 100%);
 }
-.new-song-name {
+#new-song-name {
   margin-top: 10px;
 }
 #word {
