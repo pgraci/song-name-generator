@@ -7,15 +7,15 @@
   <meta name="keywords" content="song, names" />
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-
+  <script src="http://malsup.github.com/jquery.form.js"></script>
 	<script type="text/javascript" src="js/song-name-generator.js"></script>
 
 </head>
 <body>
 
-  <form method="post" action="song-name-generator.php">
+  <form id="song-name-form" method="post" action="song-name-generator.php">
     <fieldset>
-      <label for="word">Enter A Keyword</label>
+      <label for="word">Enter A Keyword (Optional)</label>
       <input type="text" name="word">
     </fieldset>
     <fieldset>
@@ -27,6 +27,8 @@
       <input type="submit" value="Create Song Name">
     </fieldset>
   </form>
+
+  <div id="new-song-name"></div>
 
 </body>
 </html>
