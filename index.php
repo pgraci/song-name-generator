@@ -24,11 +24,11 @@
       <div class="blockinput">
         <input type="text" name="word" id="word" placeholder="Enter Keyword (Optional)">
       </div>
-      <div class="blockinput">
+      <div class="size">
         <select name="mode">
-          <option name="mode" value="3"> Small</option>
-          <option name="mode" value="2"> Medium</option>
-          <option name="mode" value="1"> Large</option>
+          <option name="mode" value="3">Small</option>
+          <option name="mode" value="2">Medium</option>
+          <option name="mode" value="1">Large</option>
         </select>
       </div>
     </div>

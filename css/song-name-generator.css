@@ -52,6 +52,7 @@ p{
   box-shadow: inset 0 0 3px #65686E;
   border-bottom: 1px solid #FFF;
   padding: 10px;
+  font-size: 14px;
 }
 input{
   width: auto;
@@ -112,4 +113,7 @@ button:active{
 }
 #word {
   width: 200px;
+}
+.size {
+  text-align: center;
 }
