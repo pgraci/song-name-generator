@@ -19,7 +19,7 @@
       <input type="text" name="word">
     </fieldset>
     <fieldset>
-      <input type="radio" name="mode" value="3"> Small<br />
+      <input type="radio" name="mode" value="3" checked> Small<br />
       <input type="radio" name="mode" value="2"> Medium<br />
       <input type="radio" name="mode" value="1"> Large<br />
     </fieldset>
