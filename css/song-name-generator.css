@@ -109,3 +109,6 @@ button:active{
 .new-song-name {
   margin-top: 10px;
 }
+#word {
+  width: 200px;
+}
