@@ -14,7 +14,7 @@
 
 </head>
 <body>
-  
+
   <div class="song-name-container">
   <h1>Song Name Generator</h1>
   <p>Need a cool name for your song?</p>
@@ -29,11 +29,12 @@
         <input type="radio" name="mode" value="1"> Large<br />
       </div>
     </div>
+    <div id="new-song-name"></div>
     <button>Create Song Name</button>
   </form>
   </div>
 
-  <div id="new-song-name"></div>
+
 
 
 </body>
