@@ -1,9 +1,14 @@
-/* generated at  http://cssdeck.com/labs/login-form-3 */
+/* inspired by  http://cssdeck.com/labs/login-form-3 */
+
+html{
+  height: 100%;
+}
 
 body{
   background: linear-gradient(to bottom, rgba(57,0,0,1) 0%,rgba(107,198,186,1) 100%);
   font-family: 'Helvetica', Arial;
   font-size: 1em;
+  min-height: 100%;
 }
 h2{
   text-align: center;
