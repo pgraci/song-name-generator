@@ -1,4 +1,4 @@
-$(document).ready(function() { 
+$(document).ready(function() {
     // bind form using ajaxForm
     $('#song-name-form').ajaxForm({
         // dataType identifies the expected content type of the server response
@@ -11,5 +11,6 @@ $(document).ready(function() {
 });
 
 function getsongname(data) {
+  alert("test: " + data.songname)
   $('#new-song-name').html(data.songname);
 }
