@@ -4,7 +4,7 @@
 
  $the_mode = $_REQUEST['mode'];
 
- if ($the_mode == '') {
+ if (empty($the_mode)) {
   $the_mode = 1;
  }
 
@@ -52,7 +52,7 @@
     // or
     // verb + seed + nouns
 
-    if ($the_word == '') {
+    if (empty($the_word)) {
         $the_song_name = $the_verb . " " . $the_adjective . " " . $the_noun;
     } else {
 	      $the_song_name = $the_verb .  " " . $the_word . " " . $the_noun;
@@ -65,7 +65,7 @@
     // or
     // adjective + seed
 
-    if ($the_word == '') {
+    if (empty($the_word)) {
 	     $the_song_name = $the_adjective . " " . $the_noun;
     } else {
 	     $the_song_name = $the_adjective . " " . $the_word;
