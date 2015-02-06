@@ -73,10 +73,7 @@
  }
 
   // create json array, add value and echo response
-  $json = array();
-  $json[0] = array(
-       'songname' => $the_song_name
-    );
+  $json = array('songname' => $the_song_name);
   echo json_encode($json);
 
 ?>
